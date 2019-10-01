@@ -29,7 +29,7 @@ class RoomsController extends Controller
         ]);
 
         if($this->checkExistRoom($request->get('create_room_name'))) {
-            return redirect()->route('index')->with('error', 'This room is exist');
+            return redirect()->route('index')->with('error', 'This room name is already taken');
         } else {
             $room = new Rooms([
                 'name' => $request->get('create_room_name'),
