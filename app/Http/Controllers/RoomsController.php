@@ -57,7 +57,7 @@ class RoomsController extends Controller
         if($this->checkExistRoom($request->get('room_name'))) {
             return redirect()->route('entered',[$request->get('room_name')]);
         } else {
-            return redirect()->route('index')->with('error', 'This room is not exist');
+            return redirect()->route('index')->with('error', 'This room doesn\'t exist');
         }
     }
 
