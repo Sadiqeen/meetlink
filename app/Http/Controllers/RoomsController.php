@@ -35,7 +35,7 @@ class RoomsController extends Controller
                 'name' => $request->get('create_room_name'),
                 'user' => $request->get('create_user_name'),
             ]);
-            
+
             if ($room->save()) {
                 return redirect()->route('entered',[$request->get('create_room_name'),$request->get('create_user_name')]);
             } else {
@@ -63,7 +63,7 @@ class RoomsController extends Controller
 
     // Allow to get in room.
 
-    public function entered($room_name, $user_name = null) 
+    public function entered($room_name, $user_name = null)
     {
 
         if($this->checkExistRoom($room_name)) {
@@ -83,7 +83,7 @@ class RoomsController extends Controller
                 'time_create_room' => $room_data->getOriginal('created_at'),
                 ]);
         } else {
-            return redirect()->route('index')->with('error', 'This room is not exist');            
+            return redirect()->route('index')->with('error', 'This room doesn\'t exist');
         }
     }
 
@@ -137,7 +137,7 @@ class RoomsController extends Controller
 
     // Check exist room ==================================================================================
 
-    public function checkExistRoom($room_name) 
+    public function checkExistRoom($room_name)
     {
         $result = Rooms::where('name',$room_name)->first();
         if ($result != null) {
