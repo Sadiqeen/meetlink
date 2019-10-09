@@ -44,6 +44,7 @@ function send_message() {
             'room_name': room_name,
             'user_name': $('#user_name').val(),
             'message': $('#message').val(),
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -69,6 +70,7 @@ function check_message_qt() {
         type: "post",
         data: {
             'room_name': room_name,
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         datatype: "json",
         headers: {
@@ -91,6 +93,7 @@ function get_message() {
         dataType: "json",
         data: {
             'room_name': room_name,
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
