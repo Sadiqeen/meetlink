@@ -69,8 +69,8 @@ function check_message_qt() {
         url: count_message,
         type: "post",
         data: {
+            '_token': $('meta[name="csrf-token"]').attr('content'),
             'room_name': room_name,
-            '_token': $('meta[name="csrf-token"]').attr('content')
         },
         datatype: "json",
         headers: {
