@@ -38,7 +38,7 @@ function send_message() {
     $('#smbt').prop('disabled', true);
     $.ajax({
         method: 'POST',
-        url: send_message_link,
+        url: 'pvNo9l',
         dataType: "json",
         data: {
             'room_name': room_name,
@@ -66,7 +66,7 @@ function send_message() {
 
 function check_message_qt() {
     $.ajax({
-        url: count_message,
+        url: 'Z8RVjj',
         type: "post",
         data: {
             '_token': $('meta[name="csrf-token"]').attr('content'),
@@ -89,7 +89,7 @@ function check_message_qt() {
 function get_message() {
     $.ajax({
         method: 'POST',
-        url: get_massage,
+        url: '9pCHAN',
         dataType: "json",
         data: {
             'room_name': room_name,
